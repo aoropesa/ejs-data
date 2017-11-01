@@ -1,0 +1,32 @@
+<!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+<body class="container">
+
+
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <% data.forEach(function(value) { %>
+        <h2><%= value.user.name %></h2>
+          <li>Location: <%= value.user.location %></li>
+          <li>URL: <a href= <%= value.user.url %> ><%= value.user.url %></a></li>
+          <li>Followers: <%= value.user.followers_count %></li>
+          <li>Time Zone: <%= value.user.time_zone %></li>
+          <li>Created: <%= value.user.created_at %></li>
+        <% }); %>
+      <p>Welcome to List Manager Using Angular</p>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
